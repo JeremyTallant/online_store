@@ -14,7 +14,8 @@ class Main:
             print("1. Browse products")
             print("2. View cart")
             print("3. Checkout")
-            print("4. Exit")
+            print("4. Load money")
+            print("5. Exit")
 
             choice = input("Enter your choice (1-4): ")
 
@@ -27,7 +28,10 @@ class Main:
                 self.user.shopping_cart.view_cart()
             elif choice == "3":
                 self.store.checkout(self.user)
-            elif choice == "4":
+            elif choice == '6':
+                amount = float(input("Enter the amount of fake money you'd like to load: "))
+                self.user.load_fake_money(amount)
+            elif choice == "5":
                 print("Thank you for shopping with us. Goodbye!")
                 break
             else:
