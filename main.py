@@ -28,7 +28,7 @@ class Main:
                 self.user.shopping_cart.view_cart()
             elif choice == "3":
                 self.store.checkout(self.user)
-            elif choice == '6':
+            elif choice == '4':
                 amount = float(input("Enter the amount of fake money you'd like to load: "))
                 self.user.load_fake_money(amount)
             elif choice == "5":
