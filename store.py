@@ -1,14 +1,24 @@
+import json
 from product import Product
 from shopping_cart import ShoppingCart
 
 
 class Store:
     def __init__(self):
-        self.products = [
-            Product(1, "Laptop", "A high-performance laptop", 1200.00, 10),
-            Product(2, "Smartphone", "A feature-packed smartphone", 800.00, 15),
-            Product(3, "Headphones", "Noise-cancelling headphones", 150.00, 25),
-        ]
+        self.products = []
+        self.load_products()
+
+    def load_products(self):
+        with open('products.json', 'r') as file:
+            product_data = json.load(file)
+            for product in product_data:
+                self.products.append(Product(
+                    product['id'],
+                    product['name'],
+                    product['description'],
+                    product['price'],
+                    product['quantity']
+                ))
 
     def browse(self):
         print("\nAvailable Products:")
