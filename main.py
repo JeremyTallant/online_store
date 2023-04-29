@@ -22,7 +22,7 @@ class Main:
             print("4. Load money")
             print("5. Exit")
 
-            choice = input("Enter your choice (1-4): ")
+            choice = input("Enter your choice (1-5): ")
 
             if choice == "1":
                 self.store.browse()
@@ -44,4 +44,5 @@ class Main:
 
 
 if __name__ == "__main__":
-    Main()
+    main_app = Main()
+    main_app.run()
