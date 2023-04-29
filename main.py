@@ -1,53 +1,38 @@
-import tkinter as tk
-from tkinter import messagebox
 from store import Store
 from user import User
 
 
-class Main(tk.Tk):
+class Main:
     def __init__(self):
-        super().__init__()
-
         self.store = Store()
         self.user = User("John Doe", "john.doe@example.com", 500.0)
+        self.run()
 
-        self.title("Online Store")
-        self.geometry("300x200")
+    def run(self):
+        while True:
+            print("\nWelcome to the Online Store!")
+            print("1. Browse products")
+            print("2. View cart")
+            print("3. Checkout")
+            print("4. Exit")
 
-        self.create_widgets()
+            choice = input("Enter your choice (1-4): ")
 
-    def create_widgets(self):
-        tk.Label(self, text="Welcome to the Online Store!").pack(pady=10)
-
-        browse_button = tk.Button(self, text="Browse Products", command=self.browse_products)
-        browse_button.pack(fill=tk.X, padx=20, pady=5)
-
-        view_cart_button = tk.Button(self, text="View Cart", command=self.view_cart)
-        view_cart_button.pack(fill=tk.X, padx=20, pady=5)
-
-        checkout_button = tk.Button(self, text="Checkout", command=self.checkout)
-        checkout_button.pack(fill=tk.X, padx=20, pady=5)
-
-        exit_button = tk.Button(self, text="Exit", command=self.quit)
-        exit_button.pack(fill=tk.X, padx=20, pady=5)
-
-    def browse_products(self):
-        self.store.browse()
-        product_id = input("Enter the ID of the product you'd like to add to your cart (or 'q' to go back): ")
-        if product_id.lower() != 'q':
-            self.store.add_to_cart(product_id, self.user.shopping_cart)
-
-    def view_cart(self):
-        self.user.shopping_cart.view_cart()
-
-    def checkout(self):
-        self.store.checkout(self.user)
-
-    def quit(self):
-        if messagebox.askyesno("Exit", "Are you sure you want to exit?"):
-            self.destroy()
+            if choice == "1":
+                self.store.browse()
+                product_id = input("Enter the ID of the product you'd like to add to your cart (or 'q' to go back): ")
+                if product_id.lower() != 'q':
+                    self.store.add_to_cart(product_id, self.user.shopping_cart)
+            elif choice == "2":
+                self.user.shopping_cart.view_cart()
+            elif choice == "3":
+                self.store.checkout(self.user)
+            elif choice == "4":
+                print("Thank you for shopping with us. Goodbye!")
+                break
+            else:
+                print("Invalid input. Please try again.")
 
 
 if __name__ == "__main__":
-    app = Main()
-    app.mainloop()
+    Main()
