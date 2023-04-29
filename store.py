@@ -9,7 +9,7 @@ class Store:
         self.load_products()
 
     def load_products(self):
-        with open('products.json', 'r') as file:
+        with open('data/products.json', 'r') as file:
             product_data = json.load(file)
             for product in product_data:
                 self.products.append(Product(
