@@ -28,4 +28,4 @@ class User:
 
     def load_fake_money(self, amount):
         self.account_balance += amount
-        print(f"\nLoaded ${amount:.2f} of fake money into your account. Your new balance is ${self.account_balance:.2f}.")
+        print(f"\nLoaded ${amount:.2f} of money into your account. Your new balance is ${self.account_balance:.2f}.")

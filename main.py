@@ -5,8 +5,13 @@ from user import User
 class Main:
     def __init__(self):
         self.store = Store()
-        self.user = User("John Doe", "john.doe@example.com", 500.0)
-        self.run()
+        
+        print("Welcome to the online store!")
+        name = input("Enter your name: ")
+        email = input("Enter your email address: ")
+        starting_balance = float(input("Enter your starting dollar amount: "))
+
+        self.user = User(name, email, starting_balance)
 
     def run(self):
         while True:
