@@ -45,4 +45,5 @@ You can customize the list of available products by editing the `products.json` 
 ]
 ```
 Make sure to maintain the JSON format and update the `id`, `name`, `description`, `price`, and `quantity` fields accordingly for each product.
-
+## Contributing
+Feel free to submit pull requests or report issues to help improve the project. All contributions are welcome!
