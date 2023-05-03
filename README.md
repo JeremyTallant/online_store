@@ -16,3 +16,18 @@ The project is organized into the following files:
 `shopping_cart.py`: Contains the `ShoppingCart` class definition, which represents a user's shopping cart and provides methods for managing items in the cart
 `user.py`: Contains the `User` class definition, which stores user information, account balance, and a shopping cart instance
 `products.json`: A JSON file containing example product data for the store
+## How to Run the Application
+1. Ensure that you have Python 3 installed on your computer.
+
+2. Clone the repository or download the source files.
+
+3. Open a terminal or command prompt, and navigate to the project directory.
+
+4. Run the following command:
+``` python
+python main.py
+```
+5. Follow the prompts to enter your name, email address, and starting dollar amount.
+
+6. Use the provided options to interact with the store, such as browsing products, adding items to your cart, and checking out.
+
