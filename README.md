@@ -30,4 +30,19 @@ python main.py
 5. Follow the prompts to enter your name, email address, and starting dollar amount.
 
 6. Use the provided options to interact with the store, such as browsing products, adding items to your cart, and checking out.
+## Customizing the Product List
+You can customize the list of available products by editing the `products.json` file. Add or modify the product entries as needed, following the existing structure:
+``` json
+[
+  {
+    "id": "1",
+    "name": "Product Name",
+    "description": "Product description",
+    "price": 19.99,
+    "quantity": 10
+  },
+  ...
+]
+```
+Make sure to maintain the JSON format and update the `id`, `name`, `description`, `price`, and `quantity` fields accordingly for each product.
 
